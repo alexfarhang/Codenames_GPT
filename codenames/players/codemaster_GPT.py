@@ -9,7 +9,9 @@ class AICodemaster(Codemaster):
         super().__init__()
         self.team = team
         system_prompt = game_rules + "You are playing the game Codenames as the " + team + " Codemaster. "
-        self.manager = GPT(system_prompt=system_prompt, version="gpt-4o-2024-05-13")
+        # version = "gpt-4o-2024-05-13"
+        version = "gpt-4.1-nano"
+        self.manager = GPT(system_prompt=system_prompt, version=version)
 
     def set_game_state(self, words, maps):
         self.words = words
